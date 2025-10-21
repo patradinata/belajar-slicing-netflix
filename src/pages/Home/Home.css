@@ -5,24 +5,56 @@
 .banner-img {
   width: 100%;
   mask-image: linear-gradient(to right, transparent, black 75%);
- -webkit-mask-image: linear-gradient(to right, transparent, black 75%);;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 75%);
 }
 
 .hero-caption {
-    position: absolute;
-    width: 100%;
-    padding-left: 6%;
-    bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding-left: 6%;
+  bottom: 0;
 }
 
 .caption-img {
-    width: 90%;
-    max-width: 420px;
-    margin-bottom: 30px;
+  width: 90%;
+  max-width: 420px;
+  margin-bottom: 30px;
 }
 
 .hero-caption p {
-    max-width: 700px;
-    font-size: 17px;
-    margin-bottom: 20px;
+  max-width: 700px;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 40px;
+}
+
+.hero-btn .btn img {
+  width: 30px;
+}
+
+.hero-btn .btn {
+  border: 0;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.hero-btn .btn.dark-btn {
+  color: white;
+  background-color: rgba(109, 109, 110, 0.7);
+  cursor: pointer;
+}
+
+.more-cards {
+  padding-left: 6%;
 }

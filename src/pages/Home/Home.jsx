@@ -5,6 +5,7 @@ import hero_banner from "/public/hero_banner.jpg";
 import hero_title from "../../assets/hero_title.png";
 import play_icon from "../../assets/play_icon.png";
 import info_icon from "../../assets/info_icon.png";
+import TitleCards from "../../components/TitleCards/TitleCards";
 
 const Home = () => {
   return (
@@ -16,7 +17,7 @@ const Home = () => {
           <img src={hero_title} alt="caption" className="caption-img" />
           <p>Watch TV Shows, Movies, Originals, and more.</p>
           <div className="hero-btn">
-            <button className="btn dark-btn">
+            <button className="btn">
               <img src={play_icon} alt="" />
               play
             </button>
@@ -25,7 +26,15 @@ const Home = () => {
               more-info
             </button>
           </div>
+          <TitleCards />
         </div>
+      </div>
+
+      <div className="more-cards">
+        <TitleCards title={"Blockbuster Movies"} />
+        <TitleCards title={"Only on netflix"} />
+        <TitleCards title={"upComing"} />
+        <TitleCards title={"Top pics for you"} />
       </div>
     </div>
   );
