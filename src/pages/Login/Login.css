@@ -1,0 +1,88 @@
+.login {
+  height: 100vh;
+  background-image: linear-gradient(#0000007e, #0000007e), url("/src/assets/background_banner.jpg");
+  padding: 20px 9%;
+}
+
+.login-logo {
+  width: 130px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 460px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  padding: 50px;
+  margin: 0 auto;
+}
+
+.login-form h1 {
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 15px 16px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.login-form input::placeholder {
+  color: #8c8c8c;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #e50914;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form-help {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 10px;
+}
+
+.remember {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+}
+
+.remember input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.form-switch {
+  margin-top: 10px;
+  color: #8c8c8c;
+}
+
+.form-switch span {
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+
+.form-switch span:hover {
+    color: #e50914;
+}
