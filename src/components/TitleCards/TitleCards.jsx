@@ -1,9 +1,17 @@
-import React, { useEffect, useRef } from "react";
-import cards_data from "../../assets/cards/Cards_data";
+import React, { useEffect, useRef, useState } from "react";
 import "./titlecards.css";
 
 const TitleCards = ({ title, category }) => {
+  const [apiData, setApiData] = useState([]);
   const cardsRef = useRef();
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNTlkZTZhZmE1ZWNjZjQ2ZjBkZTNkOGUxYWQ2Yjg1MyIsIm5iZiI6MTc1OTA1NjA1NC45MjcsInN1YiI6IjY4ZDkxMGI2NDMwNjE5YWY0NDM4YmEyOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7mSBS62rmaSwiDOUOpEtQLqs6Kt7zOqTDjQL4USsOwg",
+    },
+  };
 
   const handleWheel = (event) => {
     event.preventDefault();
@@ -11,17 +19,26 @@ const TitleCards = ({ title, category }) => {
   };
 
   useEffect(() => {
+    // Gunakan category prop untuk menentukan endpoint API
+    const endpoint = category || "now_playing";
+
+    fetch(`https://api.themoviedb.org/3/movie/${endpoint}?language=en-US&page=1`, options)
+      .then((res) => res.json())
+      .then((res) => setApiData(res.results))
+      .catch((err) => console.error(err));
+
     cardsRef.current.addEventListener("wheel", handleWheel);
-  }, []);
+  }, [category]); // Tambahkan category ke dependency array
+
   return (
     <div className="titlecards">
       <h2>{title ? title : "Popular on netflix"}</h2>
       <div className="card-list" ref={cardsRef}>
-        {cards_data.map((card, index) => {
+        {apiData.map((card, index) => {
           return (
             <div className="card" key={index}>
-              <img src={card.image} alt="" />
-              <p>{card.name}</p>
+              <img src={`https://image.tmdb.org/t/p/w500${card.backdrop_path}`} alt={card.original_title} />
+              <p>{card.original_title}</p>
             </div>
           );
         })}
