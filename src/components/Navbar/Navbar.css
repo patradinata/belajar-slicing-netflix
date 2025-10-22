@@ -86,3 +86,7 @@ body {
 .navbar-profile:hover .dropdown {
   display: block;
 }
+
+.scrolled {
+  background-color: crimson;
+}
